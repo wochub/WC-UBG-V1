@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
 
+input::placeholder {
+    color: white;
+}
+
+
 body {
-    background-color: #1b1b1b;
+    background-color: #000000;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -10,7 +15,7 @@ nav {
     top: 0;
     left: 0;
     backdrop-filter: blur(10px) saturate(200%) brightness(70%);
-    color: #fff;
+    color: #ffffff;
     display: flex;
     height: 7vw;
     width: 100%;
@@ -19,6 +24,7 @@ nav {
     padding: 0 1%;
     z-index: 5;
     margin: auto;
+    border-bottom: 1px solid white; /* This line adds a horizontal border at the bottom */
 }
 
 nav img {
@@ -59,7 +65,7 @@ nav h1 {
 }
  
 .search input {
-    background-color: #222222;
+    background-color: #232323;
     border: none;
     border-radius: 1vw 0 0 1vw;
     color: #fff;
@@ -78,10 +84,10 @@ nav h1 {
 }
  
 .search button {
-    background-color: #fff;
+    background-color: #ffffff;
     border: none;
     border-radius: 0 1vw 1vw 0;
-    color:#222222;
+    color:#000000;
     font-size: 1.5vw;
     font-weight: 600;
     padding: 0.8vw 1vw;
@@ -161,13 +167,14 @@ nav h1 {
 .featured a {
     display: inline-block;
     position: relative;
-    color: #2c7ffc;
+    color: #ffffff;
     text-decoration: none;
 }
     
     .featured .play-button {
     position: absolute;
     top: 50%;
+  
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -181,5 +188,39 @@ nav h1 {
     
     .featured .play-button i {
     font-size: 5vw;
-    text-shadow: 0 0 100px #2c7ffc;
+    text-shadow: 0 0 100px #ffffff;
     }
+
+   .star {
+       position: fixed;
+       width: 2px;
+       height: 2px;
+       background-color: white;
+       border-radius: 50%;
+       box-shadow: 0 0 2px white, 0 0 5px white;
+       z-index: -1; /* Ensure stars stay in the background */
+       animation: glide 25s linear infinite; /* Adjusted duration for a slower glide */
+   }
+   @keyframes glide {
+       0% {
+           transform: translate(0, 0);
+       }
+       100% {
+           transform: translate(100vw, 100vh);
+       }
+   }
+   nav {
+       z-index: 10; /* Ensure navigation stays above stars */
+       /* Other styles remain unchanged */
+   }
+
+.clock-style {
+  color: white; /* Set the color */
+  font-size: 20px; /* Set the font size */
+  float: right; /* Position to the right */
+  padding: 10px; /* Add some padding */
+}
+
+
+
+  
