@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Check for a saved title in localStorage and set it if exists
   const savedTitle = localStorage.getItem('customTitle');
-  document.title = savedTitle ? savedTitle : 'Grime V1'; // Default title set to 'WC Games'
+  document.title = savedTitle ? savedTitle : 'Home'; // Default title set to 'WC Games'
 
   // Check for a saved favicon and update it if found
   const savedFavicon = localStorage.getItem('customFavicon');
