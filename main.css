@@ -221,6 +221,21 @@ nav h1 {
   padding: 10px; /* Add some padding */
 }
 
+.search .alert-btn {
+    background-color: #f3ab12;
+    border: none;
+    border-radius: 1vw;
+    color: #ffffff;
+    font-size: 1.5vw;
+    font-weight: 600;
+    padding: 0.8vw 1.5vw;
+    font-family: 'Montserrat', sans-serif;
+    cursor: default;
+    margin-left: 0.8vw;
+    user-select: none;
+}
+
+
 
 
   

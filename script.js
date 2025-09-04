@@ -31,30 +31,6 @@ document.addEventListener("DOMContentLoaded", function() {
   // Initialize star generation based on the user's preference
   initializeStars();
 
-  // Client ID generator functionality
-  document.getElementById("generateChatGPTClientId").addEventListener("click", function() {
-    const clientIds = [
-      'H2JH#N91M$JK91',
-      'A1!B2@C3#D4$',
-      'E5^F6&G7*H8(',
-      'I9)J0_K1-L2+',
-      'M3=N4?O5/P6]',
-      'Q7{R8}S9|T0~',
-      'U1`V2W3X4Y5Z',
-      'a6b7c8d9e0f1g',
-      'h2i3j4k5l6m7n',
-      'o8p9q0r1s2t3u',
-      'v4w5x6y7z8!9@',
-      '0#1$2%3^4&5*',
-      '(6)7-8_9+0=a',
-      'b[c]d{e}f|g`h',
-      'i~j^k&l*m(o)p'
-    ];
-    const randomIndex = Math.floor(Math.random() * clientIds.length);
-    const selectedClientId = clientIds[randomIndex];
-    document.getElementById("displayClientId").innerText = `Client ID: ${selectedClientId}`;
-  });
-
   // Adding background color change functionality
   document.getElementById("changeBackgroundColor").addEventListener("click", function() {
     const userColor = prompt("Enter a new background color (e.g., hex, rgba, or color name): ");
