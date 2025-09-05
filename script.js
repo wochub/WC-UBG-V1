@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function setRandomTitle() {
-  const titles = ["Canvas Learning", "ClassLink", "Google Classroom", "Moodle", "Blackboard", "Schoology", "Edmodo", "Khan Academy"];
+  const titles = ["Dashboard", "My Apps", "Google Classroom", "Moodle", "Blackboard", "Schoology", "Edmodo", "Khan Academy"];
   const selectedTitle = titles[Math.floor(Math.random() * titles.length)];
   document.title = selectedTitle;
   localStorage.setItem('customTitle', selectedTitle); // Save the title to localStorage for future visits
