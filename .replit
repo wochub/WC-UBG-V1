@@ -39,13 +39,13 @@ args = "WC UBG Games Server"
 name = "WC UBG Games Server"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npx http-server -p 5000 -a 0.0.0.0 --cors"
-waitForPort = 5000
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx http-server . -p 5000 -a 0.0.0.0 --cors"
+waitForPort = 5000
 
 [[ports]]
 localPort = 80
