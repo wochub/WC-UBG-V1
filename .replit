@@ -1,5 +1,5 @@
 entrypoint = "index.html"
-modules = ["web"]
+modules = ["web", "nodejs-20"]
 run = "python3 -m http.server 8080"
 
 [nix]
@@ -11,7 +11,7 @@ publicDir = "public"
 deploymentTarget = "static"
 
 [workflows]
-runButton = "Serve static"
+runButton = "Project"
 
 [[workflows.workflow]]
 name = "Serve static"
@@ -26,8 +26,33 @@ Console logs are available in the Preview devtools or your browser devtools.\" &
 """
 waitForPort = 80
 
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "WC UBG Games Server"
+
+[[workflows.workflow]]
+name = "WC UBG Games Server"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx http-server -p 5000 -a 0.0.0.0 --cors"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
 [[ports]]
 localPort = 80
+externalPort = 80
+
+[[ports]]
+localPort = 5000
 externalPort = 80
 
 [agent]

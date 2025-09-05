@@ -151,7 +151,11 @@ function searchSites() {
   }
 }
 
-document.getElementById('searchSitesInput').addEventListener('keyup', searchSites);
+// Only add event listener if the element exists
+const searchSitesInput = document.getElementById('searchSitesInput');
+if (searchSitesInput) {
+  searchSitesInput.addEventListener('keyup', searchSites);
+}
 
 
 
