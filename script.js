@@ -1,5 +1,13 @@
 
 document.addEventListener("DOMContentLoaded", function() {
+  // Track page view with Vercel Analytics
+  if (typeof analytics !== 'undefined') {
+    analytics.page('Home Page', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
   // Search functionality
   const input = document.querySelector('input');
   const games = document.querySelectorAll('#games img');
@@ -9,12 +17,27 @@ document.addEventListener("DOMContentLoaded", function() {
     games.forEach(game => {
       game.style.display = game.alt.toLowerCase().includes(searchTerm) ? 'block' : 'none';
     });
+    
+    // Track search events
+    if (searchTerm.length > 2 && typeof analytics !== 'undefined') {
+      analytics.track('Game Search', {
+        search_term: searchTerm
+      });
+    }
   });
 
-  // Fade-in animation for images in #games
+  // Fade-in animation for images in #games and track game clicks
   document.querySelectorAll('#games img').forEach(item => {
     item.addEventListener('click', () => {
       item.classList.add('fade-in');
+      
+      // Track game click event
+      if (typeof analytics !== 'undefined') {
+        analytics.track('Game Clicked', {
+          game_name: item.alt,
+          game_url: item.closest('a')?.href
+        });
+      }
     });
   });
 
