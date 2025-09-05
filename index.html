@@ -153,7 +153,19 @@
                 <option value="schoology.png">Schoology</option>
             </select>
             <button style="background-color: #000000; color: white; border: 2px solid white; padding: 15px 30px; text-align: center; font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: bold; border-radius: 10px;" onclick="chooseFavicon(document.getElementById('faviconSelect').value)">Change Favicon</button>
-            <button style="background-color: #000000; color: white; border: 2px solid white; padding: 15px 30px; text-align: center; font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: bold; border-radius: 10px;" onclick="setRandomTitle()">Set Random Title</button>
+            <br><br>
+            <select id="titleSelect" style="background-color: #000000; color: white; border: 2px solid white; padding: 15px 30px; text-align: center; font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: bold; border-radius: 10px;">
+                <option value="WC UBG V3 Lite">Default</option>
+                <option value="Dashboard">Dashboard</option>
+                <option value="My Apps">My Apps</option>
+                <option value="Google Classroom">Google Classroom</option>
+                <option value="Moodle">Moodle</option>
+                <option value="Blackboard">Blackboard</option>
+                <option value="Schoology">Schoology</option>
+                <option value="Edmodo">Edmodo</option>
+                <option value="Khan Academy">Khan Academy</option>
+            </select>
+            <button style="background-color: #000000; color: white; border: 2px solid white; padding: 15px 30px; text-align: center; font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: bold; border-radius: 10px;" onclick="setCustomTitle(document.getElementById('titleSelect').value)">Change Title</button>
 
             <h3 style="color: white;">Enable/Disable Star Background</h3>
             <button id="toggleStarBackground" style="background-color: #000000; color: white; border: 2px solid white; padding: 15px 30px; text-align: center; font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: bold; border-radius: 10px;">Toggle Star Background</button>
